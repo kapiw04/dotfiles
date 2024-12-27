@@ -18,3 +18,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.keymap.set("n", "<leader>f", function()
 	vim.lsp.buf.format()
 end, { desc = "Format current file" })
+
+vim.diagnostic.config({
+    virtual_text = true, -- Display errors inline
+    signs = true,        -- Show error signs in the gutter
+    update_in_insert = false,
+    severity_sort = true,
+})

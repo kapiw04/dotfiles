@@ -15,7 +15,17 @@ return {
 			},
 		},
 		config = function()
-			require("lspconfig").lua_ls.setup {}
+			local lspconfig = require("lspconfig")
+			lspconfig.lua_ls.setup {}
+			lspconfig.rust_analyzer.setup({
+				diagnostics = {
+					enable = true,       -- Enable diagnostics
+				},
+				on_attach = function(client, bufnr)
+					vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+				end
+			})
+			lspconfig.pyright.setup {}
 		end,
 	}
 }

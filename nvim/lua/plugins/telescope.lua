@@ -16,7 +16,13 @@ return {
 				defaults = {
 					file_ignore_patterns = {
 						"node_modules",
+						"__pycache__/",
 						".venv",
+						"**/*.npz",
+						"**/*.float",
+						"**/*.npy",
+						"**/*.hdr",
+						"**/*.png",
 					}
 				}
 			}
