@@ -19,14 +19,19 @@ return {
 			lspconfig.lua_ls.setup {}
 			lspconfig.rust_analyzer.setup({
 				diagnostics = {
-					enable = true,       -- Enable diagnostics
+					enable = true, -- Enable diagnostics
 				},
 				on_attach = function(client, bufnr)
 					vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
 				end
 			})
 			lspconfig.pyright.setup {}
-			lspconfig.clangd.setup {}
+			lspconfig.clangd.setup {
+				cmd = { "/home/stud2023/3wojtowiczk/homebrew/bin/clangd" },
+				on_attach = function(client, bufnr)
+					vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+					vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
+				end }
 		end,
 	}
 }
