@@ -11,7 +11,7 @@
     inputs.zen-browser.homeModules.twilight
   ];
 
-  home.packages = with pkgs; [go starship];
+  home.packages = with pkgs; [gh go starship];
   programs.git.enable = true;
 
   programs.neovim = {
