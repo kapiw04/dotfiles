@@ -17,6 +17,7 @@
     git.enable = true;
     neovim.enable = true;
     waybar.enable = true;
+    vscode.enable = true;
 
     zen-browser = {
       enable = true;
