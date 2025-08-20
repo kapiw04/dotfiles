@@ -11,7 +11,7 @@
 
   imports = [inputs.zen-browser.homeModules.twilight];
 
-  home.packages = with pkgs; [gh go starship tree];
+  home.packages = with pkgs; [conda gh go starship tree];
 
   programs = {
     git.enable = true;
