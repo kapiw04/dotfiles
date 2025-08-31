@@ -18,7 +18,6 @@
     neovim.enable = true;
     waybar.enable = true;
     vscode.enable = true;
-    steam.enable = true;
 
     zen-browser = {
       enable = true;

@@ -110,6 +110,13 @@
 
   programs.gamemode.enable = true; # performance tweaks
 
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+  };
+
   # System variables
   environment.variables.EDITOR = "nvim";
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
