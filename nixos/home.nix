@@ -11,13 +11,14 @@
 
   imports = [inputs.zen-browser.homeModules.twilight];
 
-  home.packages = with pkgs; [banish flameshot unrar pixi gh go starship tree];
+  home.packages = with pkgs; [flameshot unrar pixi gh go starship tree];
 
   programs = {
     git.enable = true;
     neovim.enable = true;
     waybar.enable = true;
     vscode.enable = true;
+    banish.enable = true;
 
     zen-browser = {
       enable = true;

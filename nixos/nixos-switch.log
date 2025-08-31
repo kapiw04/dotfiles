@@ -1,32 +1,54 @@
 warning: Git tree '/home/kapi/dotfiles' is dirty
 building the system configuration...
 warning: Git tree '/home/kapi/dotfiles' is dirty
-evaluation warning: The option `hardware.pulseaudio' defined in `/nix/store/bz39bllfxx25mz43m2riiacic8pbv8nl-source/nixos/configuration.nix' has been renamed to `services.pulseaudio'.
-these 9 derivations will be built:
-  /nix/store/ljdnj1ansrmcgf05qw43425nsaf2s3cn-home-manager-path.drv
-  /nix/store/1p1armh8rlrr7i6yh8spdxqgq1mgcv06-user-environment.drv
-  /nix/store/d2wpib6cyg2bs0dx5yr43lxg7g4ykdlx-hm_fontconfigconf.d10hmfonts.conf.drv
-  /nix/store/xvwy1blrk3sz83qybzh88x7yasycdpd4-home-manager-files.drv
-  /nix/store/mmy82d3c4flgkpj0g2h06hbpxm0jy1n5-home-manager-generation.drv
-  /nix/store/rbxmplap0fs7ay0w7n00g65d2la4hig8-unit-home-manager-kapi.service.drv
-  /nix/store/nsqkwcl22pj2rfbznjwzshmvgqk0zx49-system-units.drv
-  /nix/store/70irk7jg12zbdv5r5pz5kvf0acjgkqa3-etc.drv
-  /nix/store/w5z71w65yybxmr4fxzn1q765p3663vbs-nixos-system-nixos-25.05.20250815.ad7196a.drv
-this path will be fetched (0.23 MiB download, 0.90 MiB unpacked):
-  /nix/store/7pqmsfinmw8rg97np7f72x6nil5nal2w-unrar-7.1.6
-copying path '/nix/store/7pqmsfinmw8rg97np7f72x6nil5nal2w-unrar-7.1.6' from 'https://cache.nixos.org'...
-building '/nix/store/ljdnj1ansrmcgf05qw43425nsaf2s3cn-home-manager-path.drv'...
-building '/nix/store/d2wpib6cyg2bs0dx5yr43lxg7g4ykdlx-hm_fontconfigconf.d10hmfonts.conf.drv'...
-building '/nix/store/1p1armh8rlrr7i6yh8spdxqgq1mgcv06-user-environment.drv'...
-building '/nix/store/xvwy1blrk3sz83qybzh88x7yasycdpd4-home-manager-files.drv'...
-building '/nix/store/mmy82d3c4flgkpj0g2h06hbpxm0jy1n5-home-manager-generation.drv'...
-building '/nix/store/rbxmplap0fs7ay0w7n00g65d2la4hig8-unit-home-manager-kapi.service.drv'...
-building '/nix/store/nsqkwcl22pj2rfbznjwzshmvgqk0zx49-system-units.drv'...
-building '/nix/store/70irk7jg12zbdv5r5pz5kvf0acjgkqa3-etc.drv'...
-building '/nix/store/w5z71w65yybxmr4fxzn1q765p3663vbs-nixos-system-nixos-25.05.20250815.ad7196a.drv'...
-activating the configuration...
-warning: not applying GID change of group ‘kapi’ (993 -> 1000) in /etc/group
-setting up /etc...
-reloading user units for kapi...
-restarting sysinit-reactivation.target
-Done. The new configuration is /nix/store/4wl3mgs6g3g6ghb9m8mbrx2grg7c45v7-nixos-system-nixos-25.05.20250815.ad7196a
+error:
+       … while calling the 'head' builtin
+         at /nix/store/fbnlawcsvls3033n9ddi81grgw030881-source/lib/attrsets.nix:1534:13:
+         1533|           if length values == 1 || pred here (elemAt values 1) (head values) then
+         1534|             head values
+             |             ^
+         1535|           else
+
+       … while evaluating the attribute 'value'
+         at /nix/store/fbnlawcsvls3033n9ddi81grgw030881-source/lib/modules.nix:1083:7:
+         1082|     // {
+         1083|       value = addErrorContext "while evaluating the option `${showOption loc}':" value;
+             |       ^
+         1084|       inherit (res.defsFinal') highestPrio;
+
+       … while evaluating the option `system.build.toplevel':
+
+       … while evaluating definitions from `/nix/store/fbnlawcsvls3033n9ddi81grgw030881-source/nixos/modules/system/activation/top-level.nix':
+
+       … while evaluating the option `warnings':
+
+       … while evaluating definitions from `/nix/store/fbnlawcsvls3033n9ddi81grgw030881-source/nixos/modules/system/boot/systemd.nix':
+
+       … while evaluating the option `systemd.services.home-manager-kapi.serviceConfig':
+
+       … while evaluating definitions from `/nix/store/d7kmay2nyrz55xyxibb0cpvyfqawfs9q-source/nixos':
+
+       … while evaluating the option `home-manager.users.kapi.home.file."/home/kapi/.config/fontconfig/conf.d/10-hm-fonts.conf".source':
+
+       … while evaluating definitions from `/nix/store/d7kmay2nyrz55xyxibb0cpvyfqawfs9q-source/modules/files.nix':
+
+       … while evaluating the option `home-manager.users.kapi.home.file."/home/kapi/.config/fontconfig/conf.d/10-hm-fonts.conf".text':
+
+       … while evaluating definitions from `/nix/store/d7kmay2nyrz55xyxibb0cpvyfqawfs9q-source/modules/misc/xdg.nix':
+
+       … while evaluating the option `home-manager.users.kapi.xdg.configFile."fontconfig/conf.d/10-hm-fonts.conf".text':
+
+       … while evaluating definitions from `/nix/store/d7kmay2nyrz55xyxibb0cpvyfqawfs9q-source/modules/misc/fontconfig.nix':
+
+       … while evaluating the option `home-manager.users.kapi.home.packages':
+
+       … while evaluating definitions from `/nix/store/fbnlawcsvls3033n9ddi81grgw030881-source/flake.nix':
+
+       (stack trace truncated; use '--show-trace' to show the full, detailed trace)
+
+       error: undefined variable 'banish'
+       at /nix/store/nahbn127nwyv0p9gck1g6py3vijyf0ni-source/nixos/home.nix:14:31:
+           13|
+           14|   home.packages = with pkgs; [banish flameshot unrar pixi gh go starship tree];
+             |                               ^
+           15|
