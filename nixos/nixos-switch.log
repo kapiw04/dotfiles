@@ -26,11 +26,8 @@ error:
 
        (stack trace truncated; use '--show-trace' to show the full, detailed trace)
 
-       error: The option `home-manager.users.kapi.environment' does not exist. Definition values:
+       error: The option `home-manager.users.kapi.programs.gamemode' does not exist. Definition values:
        - In `/nix/store/fbnlawcsvls3033n9ddi81grgw030881-source/flake.nix':
            {
-             systemPackages = [
-               <derivation wine-wow-staging-10.5>
-               <derivation winetricks-20250102>
-               <derivation lutris-0.5.19>
-           ...
+             enable = true;
+           }

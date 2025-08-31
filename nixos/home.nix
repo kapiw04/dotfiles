@@ -19,7 +19,6 @@
     waybar.enable = true;
     vscode.enable = true;
     steam.enable = true;
-    gamemode.enable = true; # performance tweaks
 
     zen-browser = {
       enable = true;
