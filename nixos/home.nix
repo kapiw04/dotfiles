@@ -18,6 +18,8 @@
     neovim.enable = true;
     waybar.enable = true;
     vscode.enable = true;
+    steam.enable = true;
+    gamemode.enable = true; # performance tweaks
 
     zen-browser = {
       enable = true;
@@ -37,4 +39,12 @@
       };
     };
   };
+  environment.systemPackages = with pkgs; [
+    wineWowPackages.staging # 32/64-bit Wine
+    winetricks
+    lutris # game launcher for Wine/Emulators
+    bottles # easier Wine prefix management
+    heroic # Heroic Games Launcher (Epic/GOG)
+    protonup-qt # update Proton-GE
+  ];
 }
