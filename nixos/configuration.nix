@@ -103,6 +103,7 @@
     bottles # easier Wine prefix management
     heroic # Heroic Games Launcher (Epic/GOG)
     protonup-qt # update Proton-GE
+    banish
   ];
 
   # Shell
