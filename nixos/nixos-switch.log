@@ -20,35 +20,14 @@ error:
 
        … while evaluating definitions from `/nix/store/fbnlawcsvls3033n9ddi81grgw030881-source/nixos/modules/system/activation/top-level.nix':
 
-       … while evaluating the option `warnings':
+       … while evaluating the option `assertions':
 
-       … while evaluating definitions from `/nix/store/fbnlawcsvls3033n9ddi81grgw030881-source/nixos/modules/system/boot/systemd.nix':
-
-       … while evaluating the option `systemd.services.home-manager-kapi.serviceConfig':
-
-       … while evaluating definitions from `/nix/store/d7kmay2nyrz55xyxibb0cpvyfqawfs9q-source/nixos':
-
-       … while evaluating the option `home-manager.users.kapi.home.file."/home/kapi/.config/fontconfig/conf.d/10-hm-fonts.conf".source':
-
-       … while evaluating definitions from `/nix/store/d7kmay2nyrz55xyxibb0cpvyfqawfs9q-source/modules/files.nix':
-
-       … while evaluating the option `home-manager.users.kapi.home.file."/home/kapi/.config/fontconfig/conf.d/10-hm-fonts.conf".text':
-
-       … while evaluating definitions from `/nix/store/d7kmay2nyrz55xyxibb0cpvyfqawfs9q-source/modules/misc/xdg.nix':
-
-       … while evaluating the option `home-manager.users.kapi.xdg.configFile."fontconfig/conf.d/10-hm-fonts.conf".text':
-
-       … while evaluating definitions from `/nix/store/d7kmay2nyrz55xyxibb0cpvyfqawfs9q-source/modules/misc/fontconfig.nix':
-
-       … while evaluating the option `home-manager.users.kapi.home.packages':
-
-       … while evaluating definitions from `/nix/store/fbnlawcsvls3033n9ddi81grgw030881-source/flake.nix':
+       … while evaluating definitions from `/nix/store/d7kmay2nyrz55xyxibb0cpvyfqawfs9q-source/nixos/common.nix':
 
        (stack trace truncated; use '--show-trace' to show the full, detailed trace)
 
-       error: undefined variable 'banish'
-       at /nix/store/nahbn127nwyv0p9gck1g6py3vijyf0ni-source/nixos/home.nix:14:31:
-           13|
-           14|   home.packages = with pkgs; [banish flameshot unrar pixi gh go starship tree];
-             |                               ^
-           15|
+       error: The option `home-manager.users.kapi.programs.banish' does not exist. Definition values:
+       - In `/nix/store/fbnlawcsvls3033n9ddi81grgw030881-source/flake.nix':
+           {
+             enable = true;
+           }

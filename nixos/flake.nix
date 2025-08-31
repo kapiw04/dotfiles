@@ -34,6 +34,7 @@
         {
           environment.systemPackages = [
             alejandra.packages.${system}.default
+            pkgs.banish
           ];
         }
         {
