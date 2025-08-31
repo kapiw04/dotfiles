@@ -1,47 +1,4 @@
 warning: Git tree '/home/kapi/dotfiles' is dirty
 building the system configuration...
 warning: Git tree '/home/kapi/dotfiles' is dirty
-evaluation warning: The option `hardware.pulseaudio' defined in `/nix/store/mjki7pkxz1whvj6na90113q1zy3cvxks-source/nixos/configuration.nix' has been renamed to `services.pulseaudio'.
-error:
-       … while calling the 'head' builtin
-         at /nix/store/fbnlawcsvls3033n9ddi81grgw030881-source/lib/attrsets.nix:1534:13:
-         1533|           if length values == 1 || pred here (elemAt values 1) (head values) then
-         1534|             head values
-             |             ^
-         1535|           else
-
-       … while evaluating the attribute 'value'
-         at /nix/store/fbnlawcsvls3033n9ddi81grgw030881-source/lib/modules.nix:1083:7:
-         1082|     // {
-         1083|       value = addErrorContext "while evaluating the option `${showOption loc}':" value;
-             |       ^
-         1084|       inherit (res.defsFinal') highestPrio;
-
-       … while evaluating the option `system.build.toplevel':
-
-       … while evaluating definitions from `/nix/store/fbnlawcsvls3033n9ddi81grgw030881-source/nixos/modules/system/activation/top-level.nix':
-
-       … while evaluating the option `system.systemBuilderArgs':
-
-       … while evaluating definitions from `/nix/store/fbnlawcsvls3033n9ddi81grgw030881-source/nixos/modules/system/activation/activatable-system.nix':
-
-       … while evaluating the option `system.activationScripts.etc.text':
-
-       … while evaluating definitions from `/nix/store/fbnlawcsvls3033n9ddi81grgw030881-source/nixos/modules/system/etc/etc-activation.nix':
-
-       … while evaluating definitions from `/nix/store/fbnlawcsvls3033n9ddi81grgw030881-source/nixos/modules/system/etc/etc.nix':
-
-       … while evaluating the option `environment.etc.dbus-1.source':
-
-       … while evaluating the option `environment.systemPackages':
-
-       … while evaluating definitions from `/nix/store/mjki7pkxz1whvj6na90113q1zy3cvxks-source/nixos/configuration.nix':
-
-       (stack trace truncated; use '--show-trace' to show the full, detailed trace)
-
-       error: undefined variable 'banish'
-       at /nix/store/mjki7pkxz1whvj6na90113q1zy3cvxks-source/nixos/configuration.nix:106:5:
-          105|     protonup-qt # update Proton-GE
-          106|     banish
-             |     ^
-          107|   ];
+error: interrupted by the user
