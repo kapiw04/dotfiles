@@ -1,7 +1,7 @@
 warning: Git tree '/home/kapi/dotfiles' is dirty
 building the system configuration...
 warning: Git tree '/home/kapi/dotfiles' is dirty
-evaluation warning: The option `hardware.pulseaudio' defined in `/nix/store/g092sjk1jw0m9q7fs3zm81i24w0gwyf3-source/nixos/configuration.nix' has been renamed to `services.pulseaudio'.
+evaluation warning: The option `hardware.pulseaudio' defined in `/nix/store/mjki7pkxz1whvj6na90113q1zy3cvxks-source/nixos/configuration.nix' has been renamed to `services.pulseaudio'.
 error:
        … while calling the 'head' builtin
          at /nix/store/fbnlawcsvls3033n9ddi81grgw030881-source/lib/attrsets.nix:1534:13:
@@ -35,12 +35,12 @@ error:
 
        … while evaluating the option `environment.systemPackages':
 
-       … while evaluating definitions from `/nix/store/g092sjk1jw0m9q7fs3zm81i24w0gwyf3-source/nixos/configuration.nix':
+       … while evaluating definitions from `/nix/store/mjki7pkxz1whvj6na90113q1zy3cvxks-source/nixos/configuration.nix':
 
        (stack trace truncated; use '--show-trace' to show the full, detailed trace)
 
        error: undefined variable 'banish'
-       at /nix/store/g092sjk1jw0m9q7fs3zm81i24w0gwyf3-source/nixos/configuration.nix:106:5:
+       at /nix/store/mjki7pkxz1whvj6na90113q1zy3cvxks-source/nixos/configuration.nix:106:5:
           105|     protonup-qt # update Proton-GE
           106|     banish
              |     ^
