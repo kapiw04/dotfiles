@@ -118,6 +118,7 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+  services.xserver.videoDrivers = ["nvidia"];
 
   # Graphics (needed for Steam/Proton 32-bit stuff)
   hardware.graphics.enable = true;
