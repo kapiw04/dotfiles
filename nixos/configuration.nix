@@ -122,6 +122,12 @@
   # Graphics (needed for Steam/Proton 32-bit stuff)
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
+  hardware.nvidia = {
+    modesetting.enable = true;
+    nvidiaSettings = true; # optional: nvidia-settings GUI
+    open = false; # use proprietary driver (better for GTX 1060)
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
 
   # System variables
   environment.variables.EDITOR = "nvim";
