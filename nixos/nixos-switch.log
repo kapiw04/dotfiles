@@ -1,6 +1,7 @@
 warning: Git tree '/home/kapi/dotfiles' is dirty
 building the system configuration...
 warning: Git tree '/home/kapi/dotfiles' is dirty
+evaluation warning: The option `hardware.pulseaudio' defined in `/nix/store/r1c4x9zi201gbysfykccisx5gmmzd68f-source/nixos/configuration.nix' has been renamed to `services.pulseaudio'.
 error:
        … while calling the 'head' builtin
          at /nix/store/fbnlawcsvls3033n9ddi81grgw030881-source/lib/attrsets.nix:1534:13:
@@ -20,14 +21,40 @@ error:
 
        … while evaluating definitions from `/nix/store/fbnlawcsvls3033n9ddi81grgw030881-source/nixos/modules/system/activation/top-level.nix':
 
-       … while evaluating the option `assertions':
+       … while evaluating the option `system.systemBuilderArgs':
 
-       … while evaluating definitions from `/nix/store/d7kmay2nyrz55xyxibb0cpvyfqawfs9q-source/nixos/common.nix':
+       … while evaluating definitions from `/nix/store/fbnlawcsvls3033n9ddi81grgw030881-source/nixos/modules/system/activation/activatable-system.nix':
+
+       … while evaluating the option `system.activationScripts.etc.text':
+
+       … while evaluating definitions from `/nix/store/fbnlawcsvls3033n9ddi81grgw030881-source/nixos/modules/system/etc/etc-activation.nix':
+
+       … while evaluating definitions from `/nix/store/fbnlawcsvls3033n9ddi81grgw030881-source/nixos/modules/system/etc/etc.nix':
+
+       … while evaluating the option `environment.etc.dbus-1.source':
 
        (stack trace truncated; use '--show-trace' to show the full, detailed trace)
 
-       error: The option `home-manager.users.kapi.programs.steam' does not exist. Definition values:
-       - In `/nix/store/fbnlawcsvls3033n9ddi81grgw030881-source/flake.nix':
-           {
-             enable = true;
-           }
+       error: Package ‘steam’ in /nix/store/fbnlawcsvls3033n9ddi81grgw030881-source/pkgs/by-name/st/steam/package.nix:170 has an unfree license (‘unfreeRedistributable’), refusing to evaluate.
+
+       a) To temporarily allow unfree packages, you can use an environment variable
+          for a single invocation of the nix tools.
+
+            $ export NIXPKGS_ALLOW_UNFREE=1
+
+          Note: When using `nix shell`, `nix build`, `nix develop`, etc with a flake,
+                then pass `--impure` in order to allow use of environment variables.
+
+       b) For `nixos-rebuild` you can set
+         { nixpkgs.config.allowUnfree = true; }
+       in configuration.nix to override this.
+
+       Alternatively you can configure a predicate to allow specific packages:
+         { nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+             "steam"
+           ];
+         }
+
+       c) For `nix-env`, `nix-build`, `nix-shell` or any other Nix command you can add
+         { allowUnfree = true; }
+       to ~/.config/nixpkgs/config.nix.

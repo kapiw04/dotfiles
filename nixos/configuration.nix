@@ -117,6 +117,12 @@
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
+  nixpkgs.config.allowUnfree = true;
+
+  # Graphics (needed for Steam/Proton 32-bit stuff)
+  hardware.graphics.enable = true;
+  hardware.graphics.enable32Bit = true;
+
   # System variables
   environment.variables.EDITOR = "nvim";
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
