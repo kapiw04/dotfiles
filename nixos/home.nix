@@ -11,7 +11,18 @@
 
   imports = [inputs.zen-browser.homeModules.twilight];
 
-  home.packages = with pkgs; [flameshot vulkan-tools libdecor gamescope unrar pixi gh go starship tree];
+  home.packages = with pkgs; [
+    flameshot
+    pixi
+    vulkan-tools 
+    libdecor
+    gamescope 
+    unrar
+    gh
+    go
+    starship
+    tree
+  ];
 
   programs = {
     git.enable = true;
