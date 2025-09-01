@@ -63,7 +63,10 @@
   # Enable the X11 windowing system.
 
   # Wayland
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true; # ensures XWayland is available for games/tools
+  };
 
   # System Packages
   environment.systemPackages = with pkgs; [
@@ -124,10 +127,18 @@
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
   hardware.nvidia = {
-    modesetting.enable = true;
-    nvidiaSettings = true; # optional: nvidia-settings GUI
-    open = false; # use proprietary driver (better for GTX 1060)
+    modesetting.enable = true; # Wayland/DRM modeset (NixOS enables fbdev with it)
+    open = false; # GTX 1060 = Pascal → stay on proprietary
+    nvidiaSettings = true;
+    # powerManagement.enable = true;  # optional, for nicer suspend/resume
     package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
+
+  # Wayland-friendly defaults for Electron apps and NVIDIA userspace
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1"; # Electron/Chromium apps use Wayland
+    LIBVA_DRIVER_NAME = "nvidia"; # VA-API on NVIDIA
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia"; # pick NVIDIA’s GLX
   };
 
   # System variables
