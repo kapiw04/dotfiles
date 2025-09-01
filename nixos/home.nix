@@ -11,7 +11,14 @@
 
   imports = [inputs.zen-browser.homeModules.twilight];
 
-  home.packages = with pkgs; [flameshot pixi gh go starship tree];
+  home.packages = with pkgs; [
+    flameshot
+    pixi
+    gh
+    go
+    starship
+    tree
+  ];
 
   programs = {
     git.enable = true;
