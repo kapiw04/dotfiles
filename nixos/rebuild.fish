@@ -25,9 +25,6 @@ if test $dirty_count -gt 0
     echo "▶ Git diff (before commit):"
     git --no-pager diff
     git add -A
-    git commit -m "nixos (pre-rebuild): $ts"
-else
-    echo "✔ No changes to commit (pre-rebuild)"
 end
 
 # 3) rebuild with clean error output

@@ -119,11 +119,28 @@
         "type": "github"
       }
     },
+    "nixpkgs-gamescope": {
+      "locked": {
+        "lastModified": 1744812709,
+        "narHash": "sha256-T2zVYbbft1g2nSfZRbmxoQaX1KSTBlGwyHHKv4TtzOo=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "9e1f33d1c971ba85d7f51338bbfd7ceefb07e7c8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "9e1f33d1c971ba85d7f51338bbfd7ceefb07e7c8",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "alejandra": "alejandra",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-gamescope": "nixpkgs-gamescope",
         "zen-browser": "zen-browser"
       }
     },

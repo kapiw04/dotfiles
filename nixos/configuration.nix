@@ -109,6 +109,9 @@
 
     xorg.xwininfo
     xorg.xlsclients
+
+    fluidsynth
+    soundfont-fluid # FluidR3 GM soundfont
   ];
 
   # Shell
@@ -136,12 +139,21 @@
     # powerManagement.enable = true;  # optional, for nicer suspend/resume
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
+  boot.kernelParams = ["nvidia-drm.modeset=1"];
 
   # Wayland-friendly defaults for Electron apps and NVIDIA userspace
+
   environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1"; # Electron/Chromium apps use Wayland
-    LIBVA_DRIVER_NAME = "nvidia"; # VA-API on NVIDIA
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia"; # pick NVIDIA’s GLX
+    # Force NVIDIA ICDs (comment out if you prefer per-game wrapper only)
+    VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/nvidia_icd.x86_64.json:/run/opengl-driver-32/share/vulkan/icd.d/nvidia_icd.i686.json";
+
+    VK_LOADER_LAYERS_DISABLE = "VK_LAYER_MESA_device_select:VK_LAYER_INTEL_nullhw";
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    __NV_PRIME_RENDER_OFFLOAD = "1";
+    __VK_LAYER_NV_optimus = "NVIDIA_only";
+
+    # Cursor fix on NVIDIA/Wayland
+    WLR_NO_HARDWARE_CURSORS = "1";
   };
 
   # System variables

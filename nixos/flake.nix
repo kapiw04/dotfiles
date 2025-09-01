@@ -15,6 +15,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     };
+    # Pin nixpkgs to the commit where gamescope=3.16.4
+    nixpkgs-gamescope.url = "github:NixOS/nixpkgs/9e1f33d1c971ba85d7f51338bbfd7ceefb07e7c8";
   };
 
   outputs = {
@@ -25,6 +27,8 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
+    pkgs = import nixpkgs {inherit system;};
+    pkgsGamescope = import inputs.nixpkgs-gamescope {inherit system;};
   in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
@@ -34,8 +38,10 @@
         {
           environment.systemPackages = [
             alejandra.packages.${system}.default
+            pkgsGamescope.gamescope # <- gamescope 3.16.4
           ];
         }
+        # Home Manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
