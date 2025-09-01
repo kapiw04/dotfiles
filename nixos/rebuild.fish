@@ -32,7 +32,7 @@ end
 
 # 3) rebuild with clean error output
 echo "▶ NixOS Rebuilding..."
-if not sudo nixos-rebuild switch --flake /etc/nixos#nixos &>nixos-switch.log
+if not sudo nixos-rebuild switch --flake /etc/nixos#nixos
     echo "✖ Rebuild failed. Relevant errors:"
     # show only lines with 'error' (case-insensitive); if none, show last 50 lines
     if not grep -i --color=always error nixos-switch.log
