@@ -143,7 +143,6 @@
 
   # System variables
   environment.variables.EDITOR = "nvim";
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # unsafe packages
   nixpkgs.config.allowUnfreePredicate = pkg:
